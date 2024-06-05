@@ -1,15 +1,13 @@
 <template>
-    <waterfall :col='col' :data="data">
-        <img v-if="item.img" :lazy-src="item.img" alt="加载错误" />
-    </waterfall>
+    <Waterfall :col="col" :data="data"/>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import waterfall from '@/components/waterFall.vue';
+import Waterfall from '@/components/waterFall.vue';
 
-const data = ref(generateData(100));
-const col = ref(5);
+const data = ref(generateData(10));
+const col = ref(10);
 
 function generateData(length) {
     const placeholderImg = "https://via.placeholder.com/150";
