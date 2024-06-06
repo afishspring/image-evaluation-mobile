@@ -1,13 +1,13 @@
 <template>
-    <Waterfall :col="col" :data="data"/>
+    <Waterfall :data='data' :col='col' />
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import Waterfall from '@/components/waterFall.vue';
-
-const data = ref(generateData(10));
-const col = ref(10);
+//import waterfall from 'vue-waterfall2'
+import Waterfall from '@/components/waterFall1.vue'
+const data = ref(generateData(1));
+const col = ref(1);
 
 function generateData(length) {
     const placeholderImg = "https://via.placeholder.com/150";
@@ -35,4 +35,13 @@ function generateData(length) {
 
 </script>
 
-<style scoped></style>
+<style>
+#app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0px;
+}
+</style>
