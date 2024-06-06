@@ -22,6 +22,14 @@ const constantRouterMap = [
         meta: {
             title: "菜单页",
         },
+    },
+    {
+        path: '/creation',
+        name: "creation",
+        component: () => import("@/views/creationPage.vue"),
+        meta: {
+            title: "作品",
+        },
     }
 ]
 

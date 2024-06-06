@@ -102,7 +102,7 @@ const login = async () => {
         // });
         // console.log('Login successful:', response.data);
         ElMessage.success('登录成功')
-        router.push('/menuHome')
+        router.push('/creation')
     } catch (error) {
         console.error('Login failed:', error);
         ElMessage.error('登录失败' + error)
