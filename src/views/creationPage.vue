@@ -1,14 +1,14 @@
 <template>
-    <div>
-      <div class="controls">
-        <label for="columns">Columns: </label>
-        <input type="number" id="columns" v-model.number="columns" min="1" max="6">
-      </div>
-      <div :class="gridClass">
-        <Card v-for="(item, index) in data" :key="index" :data="item" />
-      </div>
+  <div>
+    <div class="controls">
+      <label for="columns">Columns: </label>
+      <input type="number" id="columns" v-model.number="columns" min="1" max="6">
     </div>
-  </template>
+    <div :class="gridClass">
+      <Card v-for="(item, index) in data" :key="index" :data="item" />
+    </div>
+  </div>
+</template>
   
 <script setup>
 import { ref, computed } from 'vue';
@@ -18,19 +18,20 @@ const columns = ref(3);
 const data = ref(generateData(12));
 
 function generateData(count) {
-  const placeholderImg = "https://via.placeholder.com/150";
-  const placeholderAvatar = "https://via.placeholder.com/50";
+  const placeholderImg = "https://www.dmoe.cc/random.php";
+  const placeholderAvatar = "https://www.dmoe.cc/random.php";
   return Array.from({ length: count }, (_, i) => ({
     img: placeholderImg,
     title: `Title ${i + 1}`,
     avatar: placeholderAvatar,
     user: `User ${i + 1}`,
-    liked: Math.random() > 0.5 // 随机生成 true 或 false
+    liked: Math.random() > 0.5, // 随机生成 true 或 false
+    like: Math.floor(Math.random() * 1000),
   }));
 }
 
 const gridClass = computed(() => {
-  switch(columns.value) {
+  switch (columns.value) {
     case 2:
       return 'grid grid-cols-2';
     case 3:
