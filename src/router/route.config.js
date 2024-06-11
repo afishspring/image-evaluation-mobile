@@ -31,6 +31,14 @@ const constantRouterMap = [
             title: "作品",
         },
     }
+    {
+        path: '/userPage',
+        name: "userPage",
+        component: () => import("@/views/userPage.vue"),
+        meta: {
+            title: "个人主页",
+        },
+    }
 ]
 
 export default constantRouterMap
