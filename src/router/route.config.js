@@ -30,7 +30,23 @@ const constantRouterMap = [
         meta: {
             title: "作品",
         },
-    }
+    },
+    {
+        path: '/evaluation',
+        name: "evaluation",
+        component: () => import("@/views/evaluationPage.vue"),
+        meta: {
+            title: "评估",
+        },
+    },
+    {
+        path: '/user',
+        name: "user",
+        component: () => import("@/views/userPage.vue"),
+        meta: {
+            title: "个人主页",
+        },
+    },
     {
         path: '/userPage',
         name: "userPage",
