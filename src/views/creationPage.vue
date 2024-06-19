@@ -13,22 +13,10 @@
 <script setup>
 import { ref, computed } from 'vue';
 import Card from '@/components/CardComponent.vue';
+import { readData } from '@/utils/readData.js'
 
 const columns = ref(3);
-const data = ref(generateData(12));
-
-function generateData(count) {
-  const placeholderImg = "https://www.dmoe.cc/random.php";
-  const placeholderAvatar = "https://www.dmoe.cc/random.php";
-  return Array.from({ length: count }, (_, i) => ({
-    img: placeholderImg,
-    title: `Title ${i + 1}`,
-    avatar: placeholderAvatar,
-    user: `User ${i + 1}`,
-    liked: Math.random() > 0.5, // 随机生成 true 或 false
-    like: Math.floor(Math.random() * 1000),
-  }));
-}
+const data = ref(readData());
 
 const gridClass = computed(() => {
   switch (columns.value) {
