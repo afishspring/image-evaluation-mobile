@@ -347,7 +347,6 @@ button.ghost {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;
     height: 100%;
     width: 50%;
     text-align: center;
