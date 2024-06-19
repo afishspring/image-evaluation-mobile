@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ImageUploader @update:image="handleImageUpdate" @clear:image="handleImageClear" />
+        <PhotoUploader @update:image="handleImageUpdate" @clear:image="handleImageClear" />
         <button @click="uploadImage">上传图片</button>
     </div>
 </template>
@@ -8,7 +8,7 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
-import ImageUploader from '@/components/photoUploader.vue'; // 确保路径正确
+import PhotoUploader from '@/components/photoUploader.vue'; // 确保路径正确
 
 const image = ref('');
 

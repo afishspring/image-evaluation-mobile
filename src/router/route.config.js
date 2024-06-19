@@ -16,14 +16,6 @@ const constantRouterMap = [
         },
     },
     {
-        path: '/menuHome',
-        name: "menuHome",
-        component: () => import("@/views/menuHome.vue"),
-        meta: {
-            title: "菜单页",
-        },
-    },
-    {
         path: '/creation',
         name: "creation",
         component: () => import("@/views/creationPage.vue"),
