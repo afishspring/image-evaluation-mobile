@@ -28,7 +28,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +52,9 @@ html {
 .content {
     margin-left: 20%;
     width: 70%;
+    height: 100vh;
     padding: 20px;
-    overflow-y: auto;
+    display: flex;
+    /* overflow-y: auto; */
 }
 </style>

@@ -109,18 +109,22 @@ onUnmounted(() => {
 
 <style scoped>
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     position: relative;
-    width: 200px;
-    height: 200px;
 }
 
 .square {
     width: 100%;
-    height: 100%;
+    padding-bottom: 100%; /* 1:1 aspect ratio */
     background-color: lightgray;
     background-size: cover;
     background-position: center;
     position: relative;
+    border-radius: 5%;
 }
 
 .overlay {
