@@ -139,6 +139,7 @@ onUnmounted(() => {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    border-radius: 5%;
 }
 
 .overlay button {
@@ -152,7 +153,7 @@ onUnmounted(() => {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: red;
+    background-color: rgb(108, 108, 108);
     color: white;
     border: none;
     cursor: pointer;

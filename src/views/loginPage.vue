@@ -1,5 +1,5 @@
 <template>
-    <div class="body">
+    <div class="page">
         <div class="container" id="login-box">
             <div class="form-container sign-up-container">
                 <form>
@@ -155,9 +155,9 @@ a {
     margin: 15px 0;
 }
 
-.body {
-    position: relative;
-    display: grid;
+.page {
+    /* position: relative; */
+    display: flex;
     justify-items: center;
     align-items: center;
     height: 100vh;
@@ -172,7 +172,7 @@ a {
     width: 768px;
     max-width: 100%;
     min-height: 480px;
-
+    left:27%;
 }
 
 .form-container form {
