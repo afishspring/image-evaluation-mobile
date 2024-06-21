@@ -1,14 +1,15 @@
 <template>
-    <div class="user-profile">
+  <div class="container">
+    <div>
       <h1>个人信息</h1>
       <div class="user-info">
-        <div class="user-avatar">
-          <img src="../../public/avatar/image_1.jpg" alt="">
+        <div>
+          <img src="../../public/avatar/image_1.jpg" class="avatar" alt="">
+
         </div>
         <div class="user-main">
-          <h1></h1>
           <span class="info">
-            <a href="#">编辑个人资料</a>
+            <h1>一朵小花花</h1>
           </span>
         </div>
         <ul class="user-more-info">
@@ -46,6 +47,7 @@
         <img src="../../public/avatar/image_5.jpg" alt="">
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -60,6 +62,8 @@ h1 {
 
 .user-info {
   height: 210px;
+  padding: 20px;
+  border-radius: 8px;
   background-color: #d4afd5;
   display: flex;
 }
@@ -75,7 +79,7 @@ h1 {
 }
 
 .user-info .user-main {
-  width: 570px;
+  width: 200px;
   padding: 20px;
   position: relative;
 }
@@ -122,7 +126,7 @@ h1 {
 }
 
 .user-more-info {
-  width: 270px;
+  width: 500px;
   overflow: hidden;
   padding-top: 20px;
 }
@@ -167,22 +171,28 @@ h1 {
 }
 
 .user-info-show {
+  margin-top: 10px;
   height: 380px;
-  background-color: #8a96d3;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #9faae4;
   line-height: 32px;
   padding-top: 10px;
 }
 
-.user-info-show h2{
+.user-info-show h2 {
+  margin-top: 10px;
   text-align: center;
   font-size: 22px;
 }
 
 .user-info-show img {
-  padding-top: 20px;
+  margin-top: 20px;
   height: 260px;
-  width: 240px;
+  width: 260px;
   margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .user-info-show .info-empty p {
@@ -215,4 +225,25 @@ h1 {
   background-color: transparent;
 }
 
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1600px;
+  text-align: center;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.avatar {
+  margin-top: 10px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 </style>
