@@ -121,7 +121,8 @@ onUnmounted(() => {
     width: 100%;
     padding-bottom: 100%; /* 1:1 aspect ratio */
     background-color: lightgray;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     position: relative;
     border-radius: 5%;

@@ -34,7 +34,7 @@
           <li>
             <div>
               <span>发布图片</span>
-              <strong>55</strong>
+              <strong>4</strong>
             </div>
           </li>
         </ul>
@@ -173,7 +173,7 @@ h1 {
 .user-info-show {
   margin-top: 10px;
   height: 380px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   background-color: #9faae4;
   line-height: 32px;
@@ -188,8 +188,8 @@ h1 {
 
 .user-info-show img {
   margin-top: 20px;
-  height: 260px;
-  width: 260px;
+  height: 220px;
+  width: 220px;
   margin-right: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

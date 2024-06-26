@@ -10,25 +10,16 @@
                 </div>
             </div>
             <div class="result-box">
-                <h3>图片美学鉴定</h3>
-                <div class="info-item">
-                    <span>种类:</span>
-                    <span>{{ categories }}</span>
-                </div>
-                <div class="info-item">
-                    <span>评分:</span>
-                    <el-rate v-model="score" disabled allow-half size="large" :max=10></el-rate>
-                </div>
-                <div class="info-item">
-                    <span>超过全球{{ globalPercent }}%的人</span>
-                </div>
-                <div class="info-item">
-                    <span>时间:</span>
-                    <span>{{ currentTime }}</span>
-                </div>
+                <h2>图片美学鉴定</h2>
+                <TagCloud :echartsData="tagcloudData" />
+                <el-rate v-model="score" disabled allow-half size="large" :max=10></el-rate>
                 <hr>
                 <div class="result">
                     <p>{{ result }}</p>
+                </div>
+                <div class="info-item">
+                    <span> </span>
+                    <span>{{ currentTime }}</span>
                 </div>
             </div>
         </div>
@@ -36,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, reactive } from 'vue';
 import { imageUnderstand, imageContext } from '@/api/imageUnderstand.js';
 import { imageClassify } from '@/api/imageClassify.js';
 import { nima } from '@/api/nima.js'
@@ -48,9 +39,12 @@ const image = ref('');
 const taskID = ref(null);
 const result = ref('');
 const currentTime = ref('');
-const score = ref('2.5'); // 示例评分
-const categories = ref([]); // 存放符合条件的分类
+const score = ref('10'); // 示例评分
 const globalPercent = ref('90'); // 示例全球百分比
+
+import TagCloud from '@/components/TagCloud.vue'
+
+const tagcloudData = ref([]);
 
 const handleImageUpdate = (newImage) => {
     image.value = newImage;
@@ -60,8 +54,8 @@ const handleImageClear = () => {
     image.value = '';
     result.value = '';
     currentTime.value = '';
-    score.value = 5; // 清除时评分重置为0
-    categories.value = [];
+    tagcloudData.value = []
+    score.value = 10; // 清除时评分重置为0
     globalPercent.value = '';
 };
 
@@ -86,7 +80,11 @@ const uploadImage = async () => {
 
             const classResponse = await imageClassify(image.value);
             console.log(classResponse)
-            categories.value = classResponse.filter(item => item.score > 0.1).map(item => item.keyword);
+            tagcloudData.value = classResponse.filter(item => item.score > 0.01)
+                .map(item => ({
+                    value: (item.score * 100).toFixed(0), // Convert score to integer value
+                    name: item.keyword
+                }));
 
             const understandResponse = await imageUnderstand(image.value, "这张图片里有什么？");
             taskID.value = understandResponse.result.task_id;
@@ -196,7 +194,12 @@ hr {
 }
 
 .result {
-    color: #007BFF;
-    /* 字体颜色不同 */
+    margin-top: 20px; /* Top margin for result section */
+    height: 220px;
+}
+
+.result p {
+    text-align: left; /* Left-align the result text */
+    color: #666; /* Text color */
 }
 </style>
